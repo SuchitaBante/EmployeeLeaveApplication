@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+
+
+                    <div class="form-group">
+                        <label>Employee Name*</label>
+                        <input type="text" class="form-control" name="name" ngModel #name="ngModel" required pattern="[a-zA-Z]*" minlength="5" maxlength="25">
+                        <span *ngIf="name.touched && name.hasError('required')" class="text-danger" >
+                            please Enter Employee Name
+                        </span>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label>Employee Id*</label>
+                        <input type="number" class="form-control" name="employeeId" ngModel #name="ngModel" required>
+                        <span *ngIf="name.touched && name.hasError('required')" class="text-danger">
+                            Please Enter Valid Employee ID
+                        </span>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label>Leave Type*</label>
+                        <select type="text" class="form-control" name="leavetype" ngModel #name="ngModel" required>
+                            <option value="">Select Leave Type</option>
+                            <option value="Sick Leave">Sick Leave</option>
+                            <option value="Festival Leave">Festival Leave</option>
+                            <option value="Casual">Casual Leave</option>
+                            <option value="Maternity Leave">Maternity Leave</option>
+                            <option value="Annual Leave">Annual Leave</option>
+                        </select>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label >From Date*</label>
+                        <input type="date" class="form-control" name="fromdate" ngModel #fromdate="ngModel" required>
+                        <span *ngIf="fromdate.touched && fromdate.hasError('required')" class="text-danger">
+                            please Enter From Date
+                        </span>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label>To Date*</label>
+                        <input type="date" class="form-control" name="todate" ngModel #todate="ngModel" required>
+                        <span *ngIf="todate.touched && todate.hasError('required')" class="text-danger">
+                            Please Enter To Date
+                        </span>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label>Reason</label>
+                        <textarea  type="text" class="row-3" class="form-control" name="reason"      ngModel #reason="ngModel" required></textarea>
+                        <span *ngIf="reason.touched && reason.hasError('required')" class="text-danger">
+                            please Enter Reason
+                        </span>
+                    </div>
+                    <br>
+
+                    <button mat-raised-button color="primary" class="w-100" type="submit">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
