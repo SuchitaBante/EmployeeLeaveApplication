@@ -12,6 +12,9 @@
                         <span *ngIf="name.touched && name.hasError('required')" class="text-danger">
                             please Enter Employee Name
                         </span>
+                        <span *ngIf="name.dirty && name.hasError('pattern')" class="text-danger">
+                            please Enter Employee Name
+                        </span>
                     </div>
                     <br>
 
@@ -20,6 +23,9 @@
                         <input type="number" class="form-control" name="employeeId" ngModel #employeeId="ngModel"
                             required>
                         <span *ngIf="name.touched && name.hasError('required')" class="text-danger">
+                            Please Enter Valid Employee ID
+                        </span>
+                        <span *ngIf="name.dirty && name.hasError('pattern')" class="text-danger">
                             Please Enter Valid Employee ID
                         </span>
                     </div>
